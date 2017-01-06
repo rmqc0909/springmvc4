@@ -18,8 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor;
-import com.wisely.highlight_springmvc4.messageconverter.MyMessageConverter;
 
 @Configuration
 @EnableWebMvc// 1
@@ -35,57 +33,4 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		viewResolver.setViewClass(JstlView.class);
 		return viewResolver;
 	}
-
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
-		registry.addResourceHandler("/assets/**").addResourceLocations(
-				"classpath:/assets/");// 3
-
-	}
-
-	@Bean
-	// 1
-	public DemoInterceptor demoInterceptor() {
-		return new DemoInterceptor();
-	}
-
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {// 2
-		registry.addInterceptor(demoInterceptor());
-	}
-
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/index").setViewName("/index");
-		registry.addViewController("/toUpload").setViewName("/upload");
-		registry.addViewController("/converter").setViewName("/converter");
-		registry.addViewController("/sse").setViewName("/sse");
-		registry.addViewController("/async").setViewName("/async");
-	}
-
-	 @Override
-	 public void configurePathMatch(PathMatchConfigurer configurer) {
-	 configurer.setUseSuffixPatternMatch(false);
-	 }
-
-	@Bean
-	public MultipartResolver multipartResolver() {
-		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxUploadSize(1000000);
-		return multipartResolver;
-	}
-	
-	@Override
-    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(converter());
-    }
-	
-	@Bean 
-	public MyMessageConverter converter(){
-		return new MyMessageConverter();
-	}
-
-	
-
 }

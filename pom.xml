@@ -98,9 +98,16 @@
     </dependency>
 
     <!--对json和xml格式的支持 -->
-    <dependency>
+   <!-- <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
+      <version>2.5.3</version>
+    </dependency>-->
+
+    <!--对json格式的支持 -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
       <version>2.5.3</version>
     </dependency>
 

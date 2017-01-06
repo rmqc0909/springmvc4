@@ -1,21 +1,21 @@
 package com.wisely.highlight_springmvc4.domain;
 
 public class DemoObj {
-	private Long id;
+	private int id;
 	private String name;
 	
 	public DemoObj() {
 		super();
 	}
-	public DemoObj(Long id, String name) {
+	public DemoObj(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
