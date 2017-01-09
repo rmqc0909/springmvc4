@@ -26,7 +26,7 @@ public class ExceptionHandlerAdvice {
         model.addAttribute("msg", "多余信息");
     }
     //定制WebDataBinder,此处演示忽略requset参数的name
-    /*@InitBinder
+/*    @InitBinder
     public void initBinder(WebDataBinder webDataBinder) {
         webDataBinder.setDisallowedFields("name");
     }*/
