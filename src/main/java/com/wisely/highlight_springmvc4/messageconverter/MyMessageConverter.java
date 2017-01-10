@@ -31,7 +31,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {
     protected DemoObj readInternal(Class<? extends DemoObj> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
         String temp = StreamUtils.copyToString(inputMessage.getBody(), Charset.forName("UTF-8"));
         String[] tempArr = temp.split("-");
-        return new DemoObj(Integer.parseInt(tempArr[0]), tempArr[0]);
+        return new DemoObj(Integer.parseInt(tempArr[0]), tempArr[1]);
     }
 
     @Override
