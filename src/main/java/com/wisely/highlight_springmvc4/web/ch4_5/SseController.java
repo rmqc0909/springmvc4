@@ -19,6 +19,6 @@ public class SseController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "data:Test 1,2..." + random.nextInt() + "\r\n";
+        return "data:Test 1,2..." + random.nextInt() + "\n\n";
     }
 }
