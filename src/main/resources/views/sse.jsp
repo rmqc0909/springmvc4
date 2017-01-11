@@ -17,7 +17,7 @@
 
 
  if (!!window.EventSource) {
-	   var source = new EventSource('push'); 
+	   var source = new EventSource('push');
 	   s='';
 	   source.addEventListener('message', function(e) {
 		   s+=e.data+"<br/>";

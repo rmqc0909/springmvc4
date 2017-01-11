@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Random;
+import java.util.Date;
 
 /**
  * Created by xiedan11 on 2017/1/10.
@@ -13,12 +13,11 @@ import java.util.Random;
 public class SseController {
     @RequestMapping(value = "/push", produces = "text/event-stream")
     public @ResponseBody String push() {
-        Random random = new Random();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(20000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "data:Test 1,2..." + random.nextInt() + "\n\n";
+        return "data:Current Time..." + new Date() + "\n\n";
     }
 }
