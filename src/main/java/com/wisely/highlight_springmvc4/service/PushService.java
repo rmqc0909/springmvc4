@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * Created by xiedan11 on 2017/1/11.
+ * @Scheduled 注解的方法定时更新DeferredResult.
  */
 @Service
 public class PushService {

@@ -8,6 +8,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 /**
  * Created by xiedan11 on 2017/1/11.
+ * 通过控制器从另一个线程返回一个DeferredResult.
  */
 @RestController
 public class AysncController {
