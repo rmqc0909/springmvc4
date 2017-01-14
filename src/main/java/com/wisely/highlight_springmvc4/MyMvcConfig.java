@@ -1,7 +1,8 @@
 package com.wisely.highlight_springmvc4;
 
 
-import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor;
+import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor1;
+import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor2;
 import com.wisely.highlight_springmvc4.messageconverter.MyMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -34,13 +35,19 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
 
 	@Bean
-	public DemoInterceptor demoInterceptor() {
-		return new DemoInterceptor();
+	public DemoInterceptor1 demoInterceptor1() {
+		return new DemoInterceptor1();
+	}
+
+	@Bean
+	public DemoInterceptor2 demoInterceptor2() {
+		return new DemoInterceptor2();
 	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(demoInterceptor());
+		registry.addInterceptor(demoInterceptor1());
+		registry.addInterceptor(demoInterceptor2());
 	}
 
 

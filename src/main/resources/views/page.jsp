@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: xiedan11
@@ -12,7 +13,7 @@
 </head>
 <body>
     <pre>
-        Welcome to Spring Mvc Test World!
+        <c:out value="${msg}"/> Welcome to Spring Mvc Test World!
     </pre>
 </body>
 </html>
